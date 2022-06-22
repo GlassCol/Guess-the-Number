@@ -26,7 +26,7 @@ public class Engine {
             if (userChoice == correctAnswer) {
                 System.out.println("Good Job, " + userName + " You guesses my number in " + guesses + " guesses");
                 playAgain = input.getYesOrNo();
-            } else highOrLow(userChoice);
+            } else System.out.println(highOrLow(userChoice));
             guesses++;
         }
         if (guesses == 7) {
@@ -40,12 +40,14 @@ public class Engine {
 
     /**
      * Determines whether the guess is too high or low
+     *
+     * @return String
      */
-    public void highOrLow(int guess) {
+    public String highOrLow(int guess) {
         if (guess > correctAnswer) {
-            System.out.println("Your guess is too high.");
+           return("Your guess is too high.");
         } else {
-            System.out.println("Your guess is too low.");
+            return("Your guess is too low.");
         }
     }
 }
